@@ -1,0 +1,417 @@
+<html lang="es"><head>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Shop - Tu tienda de impresión 3D</title>
+    <meta name="description" content="Descubre nuestra colección de productos impresos en 3D de alta calidad. Desde soportes para dispositivos hasta decoración para el hogar.">
+    <meta name="keywords" content="impresión 3D, productos 3D, accesorios impresos, decoración 3D, personalización 3D">
+    <meta property="og:title" content="3D Shop - Tu tienda de impresión 3D">
+    <meta property="og:description" content="Descubre nuestra colección de productos impresos en 3D de alta calidad.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="3D Shop - Tu tienda de impresión 3D">
+    <meta name="twitter:description" content="Descubre nuestra colección de productos impresos en 3D de alta calidad.">
+    
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <style>body {
+    background-color: #f8f9fa;
+    color: #2d3748;
+}
+
+.section-title {
+    color: #4a5568;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.section-divider {
+    height: 2px;
+    background: linear-gradient(to right, #6b46c1, #4299e1);
+    margin: 2rem auto;
+    width: 80%;
+}
+
+.cart-icon {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: linear-gradient(135deg, #6b46c1, #4299e1);
+    color: white;
+    padding: 1rem;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.cart-icon:hover {
+    transform: scale(1.1);
+}
+</style>
+    <style>.product-card {
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.team-member {
+    text-align: center;
+    padding: 1rem;
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    object-fit: cover;
+}
+
+.contact-info {
+    background: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.materials-section {
+    background: linear-gradient(135deg, rgba(107, 70, 193, 0.1), rgba(66, 153, 225, 0.1));
+    padding: 2rem;
+    border-radius: 0.5rem;
+}
+
+.hero-section {
+    background: linear-gradient(135deg, #6b46c1, #4299e1);
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.bestsellers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .bestsellers-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .bestsellers-grid,
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+<script id="trickle-project">window.__PROTO_STATE__ = {"projectId":"proj_1mbXtzH54pl","userId":"usr_0fd1192eb8000001","workspaceId":"workspace_id_usr_0fd1192eb8000001","memberId":"member_id_usr_0fd1192eb8000001","projectTitle":"3D Shop Website"};</script><script id="trickle-badge">!function () {
+    fetch("https://app.trickle.so/proto/api/subs/features/5?userId=" + window.__PROTO_STATE__.userId).then((res) => res.json()).then((res) => {
+        if (res.data && res.data.enable) {
+            return;
+        }
+
+        const el = document.createElement("div");
+
+        el.innerHTML = `<div id="proto-trickle-badge-element" class="fixed duration-300 bg-black bottom-6 hover:shadow-[0_0_15px_rgba(85,85,85,0.3)] right-6 py-2 pl-3 pr-5 rounded-lg border hover:border-gray-700 border-gray-800 hover:-translate-y-0.5 z-[199999]"><a href="https://app.trickle.so" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2"><span><svg width="20" height="20" viewBox="0 0 288 288" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M217.19 217.196V231.921C217.19 256.318 197.412 276.096 173.014 276.096H55.2133C30.816 276.096 11.038 256.318 11.038 231.921V114.12C11.038 89.7223 30.816 69.9443 55.2133 69.9443H69.9385" fill="white"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M69.9496 55.2193V173.02C69.9496 197.418 89.7275 217.196 114.125 217.196H231.926C256.323 217.196 276.101 197.418 276.101 173.02V55.2193C276.101 30.8219 256.323 11.0439 231.926 11.0439H114.125C89.7275 11.0439 69.9496 30.8219 69.9496 55.2193Z" fill="white"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M114.12 0C83.623 0 58.9005 24.7225 58.9005 55.2192V58.9005H55.2192C24.7225 58.9005 0 83.623 0 114.12V231.921C0 262.418 24.7225 287.14 55.2192 287.14H173.02C203.517 287.14 228.24 262.418 228.24 231.921V228.24H231.921C262.418 228.24 287.14 203.517 287.14 173.02V55.2192C287.14 24.7225 262.418 0 231.921 0H114.12ZM206.152 228.24V231.921C206.152 250.219 191.318 265.052 173.02 265.052H55.2192C36.9212 265.052 22.0877 250.219 22.0877 231.921V114.12C22.0877 95.8217 36.9212 80.9882 55.2192 80.9882H58.9005V173.02C58.9005 203.517 83.623 228.24 114.12 228.24H206.152ZM80.9882 173.02C80.9882 191.318 95.8217 206.152 114.12 206.152H231.921C250.219 206.152 265.052 191.318 265.052 173.02V55.2192C265.052 36.9212 250.219 22.0877 231.921 22.0877H114.12C95.8217 22.0877 80.9882 36.9212 80.9882 55.2192V173.02Z" fill="#1F2937"></path><path d="M125.165 84.6693C125.165 78.57 130.109 73.6255 136.209 73.6255H209.834C215.934 73.6255 220.878 78.57 220.878 84.6693C220.878 90.7687 215.934 95.7132 209.834 95.7132H184.065V158.295C184.065 164.394 179.121 169.339 173.022 169.339C166.922 169.339 161.978 164.394 161.978 158.295V95.7132H136.209C130.109 95.7132 125.165 90.7687 125.165 84.6693Z" fill="#1F2937"></path></svg></span><span class="text-sm text-gray-300 transition-colors">Built with Trickle</span></a><span id="badge-close-button" class="absolute p-1 top-0 right-0 z-10 cursor-pointer hover:bg-gray-800 rounded-full overflow-hidden" onclick="document.body.removeChild(document.querySelector('#proto-trickle-badge-element'))"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" stroke="grey" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span></div>`;
+        document.body.appendChild(el.firstChild);
+    });
+}();
+</script><script id="trickle-analytics">!function () {
+    var analytics = window.analytics = window.analytics || [];
+
+    if (!analytics.initialize) if (analytics.invoked) window.console && console.error && console.error("Segment snippet included twice."); else {
+        analytics.invoked = !0; analytics.methods = ["trackSubmit", "trackClick", "trackLink", "trackForm", "pageview", "identify", "reset", "group", "track", "ready", "alias", "debug", "page", "once", "off", "on", "addSourceMiddleware", "addIntegrationMiddleware", "setAnonymousId", "addDestinationMiddleware"]; analytics.factory = function (e) { return function () { var t = Array.prototype.slice.call(arguments); t.unshift(e); analytics.push(t); return analytics } }; for (var e = 0; e < analytics.methods.length; e++) { var key = analytics.methods[e]; analytics[key] = analytics.factory(key) } analytics.load = function (key, e) { var t = document.createElement("script"); t.type = "text/javascript"; t.async = !0; t.src = "https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js"; var n = document.getElementsByTagName("script")[0]; n.parentNode.insertBefore(t, n); analytics._loadOptions = e }; console.log(analytics); analytics._writeKey = "FMFy0tKyTGNTC64dzUT5nA3IrqfP6yhr"; analytics.SNIPPET_VERSION = "4.15.3";
+        
+        analytics.load("ryeevPxktAiS6AL1tjATM0s7iGf7piwM", {
+            integrations: { "Segment.io": { apiHost: "app.trickle.so/sgmt/client", apiKey: "FMFy0tKyTGNTC64dzUT5nA3IrqfP6yhr" }}
+        });
+
+        try {
+            if (window.parent.location.href !== "https://app.trickle.so/project?id=" + window.__PROTO_STATE__.projectId) {
+                analytics.page({
+                    project_id: window.__PROTO_STATE__.projectId,
+                    user_id: window.__PROTO_STATE__.userId,
+                    indice: "nge-analytics-user"
+                });
+            }
+        } catch (e) {
+            analytics.page({
+                project_id: window.__PROTO_STATE__.projectId,
+                user_id: window.__PROTO_STATE__.userId,
+                indice: "nge-analytics-user"
+            });
+        }
+    }
+}();</script><script id="trickle-report-error">function reportError (error) {
+	if (window.parent) {
+		window.parent.postMessage({
+            type: "error",
+            data: error.stack || error.message || ''
+        }, '*');
+	}
+}</script><script id="trickle-error-boundary">class ErrorBoundaryForTrickle extends React.Component{constructor(props){super(props);this.state={hasError:false,error:null,errorInfo:null}}static getDerivedStateFromError(error){return{hasError:true}}componentDidCatch(error,errorInfo){if(window.location.origin.startsWith("https://preview__")){window.parent.postMessage({type:"error",data:error.toString()},"*");this.setState({error:error,errorInfo:errorInfo})}}render(){return this.props.children}}</script><script>
+    window.addEventListener('message', (event) => {
+        if (event.data.type === 'getHTML') {
+            const html = document.documentElement.outerHTML;
+            event.source.postMessage({ type: 'html', data: html }, '*');
+        }
+    });
+    </script></head>
+<body><script src="https://app.trickle.so/storage/trickle.js"></script>
+    <div id="root"></div>
+
+    <script>function Header(){try{return React.createElement("header",{className:"bg-gradient-to-r from-purple-600 to-blue-500 text-white py-2","data-name":"header"},React.createElement("div",{className:"max-w-6xl mx-auto px-4 text-center","data-name":"header-content"},React.createElement("p",{className:"text-sm"},React.createElement("i",{className:"fas fa-truck mr-2"}),"Env\xEDo gratis en pedidos mayores a $999 MXN")))}catch(error){console.error("Header render error:",error);reportError(error);return null}}</script>
+    <script>function Navigation(){try{const[isOpen,setIsOpen]=React.useState(false);const links=[{href:"#inicio",text:"Inicio"},{href:"#productos",text:"Productos"},{href:"#materiales",text:"Materiales"},{href:"#nosotros",text:"Nosotros"},{href:"#contacto",text:"Contacto"}];return React.createElement("nav",{className:"bg-white shadow-md","data-name":"navigation"},React.createElement("div",{className:"max-w-6xl mx-auto px-4"},React.createElement("div",{className:"flex justify-between items-center h-16"},React.createElement("div",{className:"flex-shrink-0","data-name":"nav-logo"},React.createElement("a",{href:"#",className:"text-2xl font-bold text-purple-600"},"3D Shop")),React.createElement("div",{className:"hidden md:block","data-name":"nav-links"},React.createElement("div",{className:"ml-10 flex items-center space-x-4"},links.map(link=>React.createElement("a",{key:link.href,href:link.href,className:"text-gray-600 hover:text-purple-600 px-3 py-2 rounded-md"},link.text)))),React.createElement("div",{className:"md:hidden","data-name":"mobile-menu-button"},React.createElement("button",{onClick:()=>setIsOpen(!isOpen),className:"text-gray-600 hover:text-purple-600"},React.createElement("i",{className:`fas ${isOpen?"fa-times":"fa-bars"}`}))))),isOpen&&React.createElement("div",{className:"md:hidden","data-name":"mobile-menu"},React.createElement("div",{className:"px-2 pt-2 pb-3 space-y-1"},links.map(link=>React.createElement("a",{key:link.href,href:link.href,className:"block text-gray-600 hover:text-purple-600 px-3 py-2 rounded-md",onClick:()=>setIsOpen(false)},link.text)))))}catch(error){console.error("Navigation render error:",error);reportError(error);return null}}</script>
+    <script>function Hero(){try{return React.createElement("section",{className:"hero-section","data-name":"hero-section"},React.createElement("div",{className:"max-w-4xl mx-auto text-center"},React.createElement("h1",{className:"text-4xl md:text-6xl font-bold mb-6","data-name":"hero-title"},"Bienvenido a 3D Shop"),React.createElement("p",{className:"text-xl md:text-2xl mb-8","data-name":"hero-subtitle"},"Descubre el futuro de la impresi\xF3n 3D con nuestros productos personalizados"),React.createElement("img",{src:"data:image/jpeg;base64,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",alt:"Impresora 3D en acci\xF3n",className:"mx-auto rounded-lg shadow-lg max-w-2xl","data-name":"hero-image"}),React.createElement("a",{href:"#productos",className:"inline-block mt-8 px-8 py-3 bg-white text-purple-600 rounded-full font-bold hover:bg-gray-100 transition-colors","data-name":"hero-cta"},"Ver Productos")))}catch(error){console.error("Hero render error:",error);reportError(error);return null}}</script>
+<script>function BestSellers({onCartUpdate}){try{const bestSellers=[{id:1,name:"Soporte de Celular para Escritorio",description:"Soporte ergon\xF3mico y estable para tu smartphone",price:299,material:"PLA Premium",availability:true,image:"https://fbi.cults3d.com/uploads/collection/shot_es/101/MECHANICAL_QUICK_GRAB-RELEASE_PHONE_STAND_STL_FILE_3D_PRINTING.jpg",deliveryTime:"3-5 d\xEDas"},{id:3,name:"Maceta Geom\xE9trica Decorativa",description:"Maceta moderna con dise\xF1o poligonal",price:349,material:"PLA Premium",availability:true,image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyTISyi-P2cpGwEsmT5qIJbctvjWBXI0IYVg&s",deliveryTime:"4-6 d\xEDas"},{id:10,name:"Set de Ajedrez Personalizado",description:"Juego de ajedrez completo con dise\xF1o \xFAnico",price:899,material:"PLA Premium",availability:true,image:"https://images.unsplash.com/photo-1586165368502-1bad197a6461?w=800",deliveryTime:"5-7 d\xEDas"},{id:13,name:"L\xE1mpara Geom\xE9trica",description:"L\xE1mpara decorativa con dise\xF1o poligonal",price:599,material:"PLA Premium",availability:true,image:"https://i.etsystatic.com/21492836/r/il/4ab684/3657581693/il_570xN.3657581693_gqte.jpg",deliveryTime:"4-6 d\xEDas"},{id:6,name:"Soporte para Aud\xEDfonos Premium",description:"Soporte elegante para tus aud\xEDfonos",price:279,material:"PETG",availability:true,image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyjM96UfNtQXFZQeRkLu6j7lBd85T8DQ5WGQ&s",deliveryTime:"3-5 d\xEDas"},{id:4,name:"Llavero Personalizado",description:"Llavero con tu nombre o dise\xF1o preferido",price:149,material:"PLA Premium",availability:true,image:"https://i.etsystatic.com/10574163/r/il/166541/1937825663/il_fullxfull.1937825663_cgbq.jpg",deliveryTime:"2-3 d\xEDas"}];const handleAddToCart=product=>{if(addToCart(product)){alert("\xA1Producto agregado al carrito!");onCartUpdate()}};return React.createElement("section",{className:"py-12 px-4 bg-gray-50","data-name":"bestsellers-section"},React.createElement("h2",{className:"section-title"},"Los M\xE1s Vendidos"),React.createElement("div",{className:"max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6","data-name":"bestsellers-grid"},bestSellers.map(product=>React.createElement(ProductCard,{key:product.id,product:product,onAddToCart:handleAddToCart}))))}catch(error){console.error("BestSellers render error:",error);reportError(error);return null}}</script>
+  <script>function ProductList({onCartUpdate}){try{const products=[{id:1,name:"Soporte de Celular para Escritorio",description:"Soporte ergon\xF3mico y estable para tu smartphone",price:299,material:"PLA Premium",availability:true,image:"https://fbi.cults3d.com/uploads/collection/shot_es/101/MECHANICAL_QUICK_GRAB-RELEASE_PHONE_STAND_STL_FILE_3D_PRINTING.jpg",deliveryTime:"3-5 d\xEDas"},{ id: 2,
+        name: "Organizador de Escritorio Premium",
+        description: "Organizador multifuncional para tus útiles de oficina", 
+        price: 399,
+        material: "PETG",
+        availability: true,
+        image: "https://i.etsystatic.com/29168541/r/il/6c2b6d/3875836339/il_1080xN.3875836339_mvdu.jpg",
+        deliveryTime: "3-5 días",
+        isBestSeller: false},{
+        id: 3,
+        name: "Maceta Geométrica Decorativa",
+        description: "Maceta moderna con diseño poligonal, perfecta para suculentas",
+        price: 349,
+        material: "PLA Premium",
+        availability: true,
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyTISyi-P2cpGwEsmT5qIJbctvjWBXI0IYVg&s",
+        deliveryTime: "4-6 días",
+        isBestSeller: true
+    },
+    {
+        id: 4,
+        name: "Llavero Personalizado",
+        description: "Llavero con tu nombre o diseño preferido",
+        price: 149,
+        material: "PLA Premium",
+        availability: true,
+        image: "https://i.etsystatic.com/10574163/r/il/166541/1937825663/il_fullxfull.1937825663_cgbq.jpg",
+        deliveryTime: "2-3 días",
+        isBestSeller: true
+    },
+    {
+        id: 5,
+        name: "Mini Dragón Coleccionable",
+        description: "Figura detallada de dragón, perfecta para coleccionistas",
+        price: 299,
+        material: "PETG",
+        availability: true,
+        image: "https://p3d.mx/cdn/shop/files/7123vuDVEDL._AC_SX569.jpg?v=1704805516",
+        deliveryTime: "4-6 días",
+        isBestSeller: false
+    },
+    {
+        id: 6,
+        name: "Soporte para Audífonos Premium",
+        description: "Soporte elegante para tus audífonos de diadema",
+        price: 279,
+        material: "PETG",
+        availability: true,
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyjM96UfNtQXFZQeRkLu6j7lBd85T8DQ5WGQ&s",
+        deliveryTime: "3-5 días",
+        isBestSeller: true
+    },
+    {
+        id: 7,
+        name: "Ganchos Multiuso (Set de 3)",
+        description: "Ganchos resistentes para cocina o baño",
+        price: 199,
+        material: "PLA Premium",
+        availability: true,
+        image: "https://i.etsystatic.com/29168541/r/il/11c9b8/3915580707/il_fullxfull.3915580707_624x.jpg",
+        deliveryTime: "3-4 días",
+        isBestSeller: false
+    },
+    {
+        id: 8,
+        name: "Soporte para Cepillos",
+        description: "Organizador de cepillos de dientes con diseño moderno",
+        price: 189,
+        material: "PLA Premium",
+        availability: true,
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvfBdOiexZgx1cCQEmJK6xxbbFZb7nipKJng&s",
+        deliveryTime: "2-4 días",
+        isBestSeller: false
+    },
+    {
+        id: 9,
+        name: "Organizador de Cables",
+        description: "Sistema modular para organizar cables",
+        price: 159,
+        material: "PETG",
+        availability: true,
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjNL3qF4koZPj30PpLHa0Jie6g6ZqBSzCe2A&s",
+        deliveryTime: "2-3 días",
+        isBestSeller: false
+    },
+    {
+        id: 10,
+        name: "Set de Ajedrez Personalizado",
+        description: "Juego de ajedrez completo con diseño único",
+        price: 899,
+        material: "PLA Premium",
+        availability: true,
+        image: "https://images.unsplash.com/photo-1586165368502-1bad197a6461?w=800",
+        deliveryTime: "5-7 días",
+        isBestSeller: true
+    },
+    {
+        id: 11,
+        name: "Estuche para Anillos",
+        description: "Caja elegante con compartimentos para joyería",
+        price: 249,
+        material: "PLA Premium",
+        availability: true,
+        image: "https://i.etsystatic.com/26578704/r/il/9cadc3/4655530700/il_fullxfull.4655530700_q5f2.jpg",
+        deliveryTime: "3-4 días",
+        isBestSeller: false
+    },
+    {
+        id: 12,
+        name: "Tope de Puerta Decorativo",
+        description: "Tope de puerta con diseño moderno",
+        price: 169,
+        material: "PETG",
+        availability: true,
+        image: "https://i.etsystatic.com/16911035/r/il/1d0058/6701292358/il_570xN.6701292358_a7xr.jpg",
+        deliveryTime: "2-3 días",
+        isBestSeller: false
+    },
+    {
+        id: 13,
+        name: "Lámpara Geométrica",
+        description: "Lámpara decorativa con diseño poligonal",
+        price: 599,
+        material: "PLA Premium",
+        availability: true,
+        image: "https://i.etsystatic.com/21492836/r/il/4ab684/3657581693/il_570xN.3657581693_gqte.jpg",
+        deliveryTime: "4-6 días",
+        isBestSeller: true
+    },
+    {
+        id: 14,
+        name: "Soporte para Nintendo Switch",
+        description: "Soporte ajustable para tu consola",
+        price: 349,
+        material: "PLA Premium",
+        availability: true,
+        image: "https://i.etsystatic.com/16509552/r/il/63dac5/2944511496/il_570xN.2944511496_f4fc.jpg",
+        deliveryTime: "3-5 días",
+        isBestSeller: false
+    },
+    {
+        id: 15,
+        name: "Topper para Pastel",
+        description: "Decoración personalizada para pasteles",
+        price: 199,
+        material: "PLA Premium",
+        availability: true,
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtN-1vnJcT1RJswBExY6k1uw951dgRtqFhJw&s",
+        deliveryTime: "2-3 días",
+        isBestSeller: false
+    },
+    {
+        id: 16,
+        name: "Soporte para Tablet",
+        description: "Soporte ajustable para tablets y iPads",
+        price: 379,
+        material: "PLA Premium",
+        availability: true,
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeQLlH-gMwKFJAZNVBqU27orT6e2TOWOP6aw&s",
+        deliveryTime: "3-5 días",
+        isBestSeller: false
+    },
+    {
+        id: 17,
+        name: "Molde para Galletas",
+        description: "Set de moldes para repostería",
+        price: 229,
+        material: "PLA Premium",
+        availability: true,
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVrM_qSRgbmwIkmbWlvywNRAmb1mql3UoC7A&s",
+        deliveryTime: "2-4 días",
+        isBestSeller: false
+    },
+    {
+        id: 18,
+        name: "Ajolote Articulado",
+        description: "Juguete articulado con diseño de ajolote",
+        price: 449,
+        material: "PETG",
+        availability: true,
+        image: "https://dl2.myminifactory.com/object-assets/62e717a0991cb/images/720X720-download-5.jpg",
+        deliveryTime: "4-6 días",
+        isBestSeller: false
+    },
+    {
+        id: 19,
+        name: "Set de Joyería Geométrica",
+        description: "Conjunto de accesorios modernos",
+        price: 299,
+        material: "PLA Premium",
+        availability: true,
+        image: "https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=800",
+        deliveryTime: "3-4 días",
+        isBestSeller: false
+    },
+    {
+        id: 20,
+        name: "Perilla Decorativa",
+        description: "Perilla de repuesto con diseño moderno",
+        price: 129,
+        material: "PETG",
+        availability: true,
+        image: "https://i.etsystatic.com/37303923/r/il/73ba88/5761172913/il_fullxfull.5761172913_96ud.jpg",
+        deliveryTime: "2-3 días",
+        isBestSeller: false
+    }];const[searchTerm,setSearchTerm]=React.useState("");const filteredProducts=products.filter(product=>product.name.toLowerCase().includes(searchTerm.toLowerCase())||product.description.toLowerCase().includes(searchTerm.toLowerCase()));const handleAddToCart=product=>{if(addToCart(product)){alert("\xA1Producto agregado al carrito!");onCartUpdate()}};return React.createElement("section",{id:"productos",className:"py-12 px-4","data-name":"products-section"},React.createElement("h2",{className:"section-title"},"Nuestros Productos"),React.createElement("div",{className:"max-w-7xl mx-auto"},React.createElement("div",{className:"mb-8","data-name":"search-container"},React.createElement("div",{className:"max-w-md mx-auto relative"},React.createElement("input",{type:"text",placeholder:"Buscar productos...",className:"w-full p-3 border rounded-lg pl-10",value:searchTerm,onChange:e=>setSearchTerm(e.target.value),"data-name":"search-input"}),React.createElement("i",{className:"fas fa-search absolute left-3 top-3.5 text-gray-400"}))),React.createElement("div",{className:"grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4","data-name":"products-grid"},filteredProducts.map(product=>React.createElement(ProductCard,{key:product.id,product:product,onAddToCart:handleAddToCart})))))}catch(error){console.error("ProductList render error:",error);reportError(error);return null}}</script>
+    <script>function Materials(){try{const materials=[{name:"PLA Premium",description:"Material biodegradable ideal para uso general, decoraci\xF3n y prototipos.",colors:["Blanco","Negro","Gris","Azul","Rojo","Verde"],properties:["Resistente a impactos moderados","Acabado mate y suave","Biodegradable","Ideal para interiores"]},{name:"PETG",description:"Material resistente y duradero, perfecto para piezas funcionales.",colors:["Transparente","Negro","Blanco","Azul"],properties:["Alta resistencia mec\xE1nica","Resistente al agua","Durabilidad prolongada","Apto para uso con alimentos"]}];return React.createElement("div",{className:"py-16 bg-gray-50","data-name":"materials"},React.createElement("div",{className:"container mx-auto px-4"},React.createElement("h2",{className:"text-3xl font-bold text-center mb-12"},"Nuestros Materiales"),React.createElement("div",{className:"grid grid-cols-1 md:grid-cols-2 gap-8"},materials.map((material,index)=>React.createElement("div",{key:index,className:"bg-white rounded-lg shadow-lg p-6","data-name":`material-${index}`},React.createElement("h3",{className:"text-xl font-bold mb-4"},material.name),React.createElement("p",{className:"text-gray-600 mb-4"},material.description),React.createElement("div",{className:"mb-4"},React.createElement("h4",{className:"font-semibold mb-2"},"Colores disponibles:"),React.createElement("div",{className:"flex flex-wrap gap-2"},material.colors.map((color,colorIndex)=>React.createElement("span",{key:colorIndex,className:"px-3 py-1 bg-gray-100 rounded-full text-sm","data-name":`color-${colorIndex}`},color)))),React.createElement("div",null,React.createElement("h4",{className:"font-semibold mb-2"},"Caracter\xEDsticas:"),React.createElement("ul",{className:"list-disc list-inside text-gray-600"},material.properties.map((property,propIndex)=>React.createElement("li",{key:propIndex,"data-name":`property-${propIndex}`},property))))))),React.createElement("div",{className:"mt-12 bg-white rounded-lg shadow-lg p-6"},React.createElement("h3",{className:"text-xl font-bold mb-4"},"Cuidado y Mantenimiento"),React.createElement("div",{className:"grid grid-cols-1 md:grid-cols-2 gap-8"},React.createElement("div",{"data-name":"care-instructions"},React.createElement("h4",{className:"font-semibold mb-2"},"Recomendaciones generales:"),React.createElement("ul",{className:"list-disc list-inside text-gray-600"},React.createElement("li",null,"Mantener alejado de la luz solar directa"),React.createElement("li",null,"Limpiar con un pa\xF1o h\xFAmedo sin productos abrasivos"),React.createElement("li",null,"Evitar temperaturas extremas"),React.createElement("li",null,"Almacenar en lugar seco y fresco"))),React.createElement("div",{"data-name":"durability-info"},React.createElement("h4",{className:"font-semibold mb-2"},"Durabilidad:"),React.createElement("ul",{className:"list-disc list-inside text-gray-600"},React.createElement("li",null,"Vida \xFAtil estimada de 2-5 a\xF1os en condiciones normales"),React.createElement("li",null,"Resistencia UV moderada"),React.createElement("li",null,"Resistencia al impacto seg\xFAn material"),React.createElement("li",null,"Garant\xEDa de calidad en acabados")))))))}catch(error){console.error("Materials component error:",error);reportError(error);return null}}</script><script>function Materials(){try{const materials=[{name:"PLA Premium",description:"Material biodegradable ideal para uso general, decoraci\xF3n y prototipos.",colors:["Blanco","Negro","Gris","Azul","Rojo","Verde"],properties:["Resistente a impactos moderados","Acabado mate y suave","Biodegradable","Ideal para interiores"]},{name:"PETG",description:"Material resistente y duradero, perfecto para piezas funcionales.",colors:["Transparente","Negro","Blanco","Azul"],properties:["Alta resistencia mec\xE1nica","Resistente al agua","Durabilidad prolongada","Apto para uso con alimentos"]}];return React.createElement("div",{className:"py-16 bg-gray-50","data-name":"materials"},React.createElement("div",{className:"container mx-auto px-4"},React.createElement("h2",{className:"text-3xl font-bold text-center mb-12"},"Nuestros Materiales"),React.createElement("div",{className:"grid grid-cols-1 md:grid-cols-2 gap-8"},materials.map((material,index)=>React.createElement("div",{key:index,className:"bg-white rounded-lg shadow-lg p-6","data-name":`material-${index}`},React.createElement("h3",{className:"text-xl font-bold mb-4"},material.name),React.createElement("p",{className:"text-gray-600 mb-4"},material.description),React.createElement("div",{className:"mb-4"},React.createElement("h4",{className:"font-semibold mb-2"},"Colores disponibles:"),React.createElement("div",{className:"flex flex-wrap gap-2"},material.colors.map((color,colorIndex)=>React.createElement("span",{key:colorIndex,className:"px-3 py-1 bg-gray-100 rounded-full text-sm","data-name":`color-${colorIndex}`},color)))),React.createElement("div",null,React.createElement("h4",{className:"font-semibold mb-2"},"Caracter\xEDsticas:"),React.createElement("ul",{className:"list-disc list-inside text-gray-600"},material.properties.map((property,propIndex)=>React.createElement("li",{key:propIndex,"data-name":`property-${propIndex}`},property))))))),React.createElement("div",{className:"mt-12 bg-white rounded-lg shadow-lg p-6"},React.createElement("h3",{className:"text-xl font-bold mb-4"},"Cuidado y Mantenimiento"),React.createElement("div",{className:"grid grid-cols-1 md:grid-cols-2 gap-8"},React.createElement("div",{"data-name":"care-instructions"},React.createElement("h4",{className:"font-semibold mb-2"},"Recomendaciones generales:"),React.createElement("ul",{className:"list-disc list-inside text-gray-600"},React.createElement("li",null,"Mantener alejado de la luz solar directa"),React.createElement("li",null,"Limpiar con un pa\xF1o h\xFAmedo sin productos abrasivos"),React.createElement("li",null,"Evitar temperaturas extremas"),React.createElement("li",null,"Almacenar en lugar seco y fresco"))),React.createElement("div",{"data-name":"durability-info"},React.createElement("h4",{className:"font-semibold mb-2"},"Durabilidad:"),React.createElement("ul",{className:"list-disc list-inside text-gray-600"},React.createElement("li",null,"Vida \xFAtil estimada de 2-5 a\xF1os en condiciones normales"),React.createElement("li",null,"Resistencia UV moderada"),React.createElement("li",null,"Resistencia al impacto seg\xFAn material"),React.createElement("li",null,"Garant\xEDa de calidad en acabados")))))))}catch(error){console.error("Materials component error:",error);reportError(error);return null}}</script>   <script>function About(){try{const team=[{name:"Gabriel Campos",role:"Atenci\xF3n al Cliente",image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIGcN-FDZXXJ2TQVldg8fNtwKlR69diJa2jg&s"},{name:"Dagny Taggart",role:"Dise\xF1adora Senior",image:"https://impresioni3d.com/wp-content/uploads/2022/10/figuras-3d-1.jpg"},{name:"Genaro Buenavista",role:"T\xE9cnico de Impresi\xF3n",image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPvG1fznngG46ZOI_s4FoQnA61JWAJ5ZoByQ&s"}];return React.createElement("section",{id:"nosotros",className:"py-12 px-4","data-name":"about-section"},React.createElement("h2",{className:"section-title"},"Nosotros"),React.createElement("div",{className:"max-w-4xl mx-auto"},React.createElement("div",{className:"text-center mb-12","data-name":"about-content"},React.createElement("p",{className:"text-lg mb-6"},"Fundada en 2023 en M\xE9rida, Yucat\xE1n, 3D Shop naci\xF3 con la visi\xF3n de revolucionar la manera en que las personas acceden a productos personalizados y \xFAnicos a trav\xE9s de la tecnolog\xEDa de impresi\xF3n 3D."),React.createElement("p",{className:"text-lg mb-6"},"Nos especializamos en crear productos de alta calidad utilizando los mejores materiales y tecnolog\xEDas de impresi\xF3n 3D disponibles en el mercado."),React.createElement("p",{className:"text-lg"},"Nuestro compromiso es ofrecer soluciones innovadoras y sostenibles, garantizando la satisfacci\xF3n total de nuestros clientes.")),React.createElement("div",{className:"grid grid-cols-1 md:grid-cols-3 gap-8","data-name":"team-section"},team.map((member,index)=>React.createElement("div",{key:index,className:"team-member text-center","data-name":"team-member"},React.createElement("img",{src:member.image,alt:member.name,className:"w-32 h-32 rounded-full mx-auto mb-4 object-cover"}),React.createElement("h3",{className:"text-xl font-bold"},member.name),React.createElement("p",{className:"text-purple-600"},member.role))))))}catch(error){console.error("About render error:",error);reportError(error);return null}}</script>
+    <script>function Contact(){try{return React.createElement("section",{id:"contacto",className:"py-12 px-4","data-name":"contact-section"},React.createElement("h2",{className:"section-title"},"Contacto"),React.createElement("div",{className:"max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8"},React.createElement("div",{className:"contact-info","data-name":"contact-details"},React.createElement("h3",{className:"text-xl font-bold mb-4"},"Informaci\xF3n de Contacto"),React.createElement("div",{className:"space-y-4"},React.createElement("p",null,React.createElement("i",{className:"fas fa-phone mr-2"}),"+52 999 123 4567"),React.createElement("p",null,React.createElement("i",{className:"fas fa-envelope mr-2"}),"info@3dshop.mx"),React.createElement("p",null,React.createElement("i",{className:"fas fa-clock mr-2"}),"Lunes a Viernes: 9:00 AM - 6:00 PM"),React.createElement("p",null,React.createElement("i",{className:"fas fa-map-marker-alt mr-2"}),"M\xE9rida, Yucat\xE1n, M\xE9xico")),React.createElement("div",{className:"mt-6","data-name":"social-media"},React.createElement("h4",{className:"font-bold mb-2"},"S\xEDguenos en:"),React.createElement("div",{className:"flex space-x-4"},React.createElement("a",{href:"#",className:"text-purple-600 hover:text-purple-700"},React.createElement("i",{className:"fab fa-facebook fa-2x"})),React.createElement("a",{href:"#",className:"text-purple-600 hover:text-purple-700"},React.createElement("i",{className:"fab fa-instagram fa-2x"})),React.createElement("a",{href:"#",className:"text-purple-600 hover:text-purple-700"},React.createElement("i",{className:"fab fa-twitter fa-2x"}))))),React.createElement("div",{className:"contact-info","data-name":"contact-form"},React.createElement("h3",{className:"text-xl font-bold mb-4"},"Env\xEDanos un Mensaje"),React.createElement("form",{className:"space-y-4"},React.createElement("div",null,React.createElement("label",{className:"block text-gray-700 mb-2"},"Nombre"),React.createElement("input",{type:"text",className:"w-full p-2 border rounded","data-name":"name-input"})),React.createElement("div",null,React.createElement("label",{className:"block text-gray-700 mb-2"},"Email"),React.createElement("input",{type:"email",className:"w-full p-2 border rounded","data-name":"email-input"})),React.createElement("div",null,React.createElement("label",{className:"block text-gray-700 mb-2"},"Mensaje"),React.createElement("textarea",{className:"w-full p-2 border rounded h-32","data-name":"message-input"})),React.createElement("button",{type:"submit",className:"w-full bg-purple-600 text-white py-2 rounded hover:bg-purple-700","data-name":"submit-button"},"Enviar Mensaje")))))}catch(error){console.error("Contact render error:",error);reportError(error);return null}}</script>
+    <script>function Cart({items,show,onClose}){try{const total=items.reduce((sum,item)=>sum+item.price*item.quantity,0);if(!show)return null;return React.createElement("div",{className:"fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-end","data-name":"cart-overlay"},React.createElement("div",{className:"bg-white w-96 h-full p-6 overflow-y-auto","data-name":"cart-container"},React.createElement("div",{className:"flex justify-between items-center mb-4","data-name":"cart-header"},React.createElement("h2",{className:"text-2xl font-bold"},"Carrito"),React.createElement("button",{onClick:onClose,className:"text-gray-500 hover:text-gray-700","data-name":"close-cart-button"},React.createElement("i",{className:"fas fa-times"}))),items.length===0?React.createElement("p",{className:"text-gray-500 text-center py-8","data-name":"empty-cart-message"},"Tu carrito est\xE1 vac\xEDo"):React.createElement("div",{"data-name":"cart-items"},items.map(item=>React.createElement("div",{key:item.id,className:"border-b py-4 flex items-center space-x-4","data-name":"cart-item"},React.createElement("img",{src:item.image,alt:item.name,className:"w-20 h-20 object-cover rounded"}),React.createElement("div",{className:"flex-1"},React.createElement("h3",{className:"font-bold"},item.name),React.createElement("p",{className:"text-gray-600 text-sm"},"$",item.price," x ",item.quantity),React.createElement("p",{className:"text-sm text-gray-500"},"Material: ",item.material),React.createElement("p",{className:"text-sm text-gray-500"},"Entrega: ",item.deliveryTime)),React.createElement("div",{className:"text-right"},React.createElement("p",{className:"font-bold"},"$",item.price*item.quantity)))),React.createElement("div",{className:"mt-6 border-t pt-4"},React.createElement("div",{className:"flex justify-between text-xl font-bold mb-4","data-name":"cart-total"},React.createElement("span",null,"Total:"),React.createElement("span",null,"$",total)),React.createElement("button",{className:"w-full bg-purple-600 text-white py-3 rounded-lg hover:bg-purple-700 transition-colors","data-name":"checkout-button"},"Proceder al Pago")))))}catch(error){console.error("Cart render error:",error);reportError(error);return null}}</script>
+    <script>function ProductCard({product,onAddToCart}){try{const{name,description,price,material,availability,image,deliveryTime}=product;return React.createElement("div",{className:"product-card p-4 m-4","data-name":"product-card"},React.createElement("img",{src:image,alt:name,className:"product-image mb-4 w-full h-48 object-cover rounded-lg","data-name":"product-image"}),React.createElement("h3",{className:"text-xl font-bold mb-2","data-name":"product-title"},name),React.createElement("p",{className:"text-gray-600 mb-2","data-name":"product-description"},description),React.createElement("div",{className:"text-purple-600 font-bold text-xl mb-2","data-name":"product-price"},"$",price," MXN"),React.createElement("div",{className:"text-sm text-gray-500 mb-4","data-name":"product-details"},React.createElement("p",{className:"mb-1"},React.createElement("i",{className:"fas fa-cube mr-2"}),"Material: ",material),React.createElement("p",{className:"mb-1"},React.createElement("i",{className:"fas fa-truck mr-2"}),"Entrega: ",deliveryTime),React.createElement("p",null,React.createElement("i",{className:"fas fa-check-circle mr-2"}),"Estado: ",availability?"Disponible":"Agotado")),React.createElement("button",{onClick:()=>onAddToCart(product),disabled:!availability,className:`w-full py-3 px-4 rounded-lg flex items-center justify-center space-x-2 ${availability?"bg-purple-600 hover:bg-purple-700 text-white":"bg-gray-300 cursor-not-allowed"}`,"data-name":"add-to-cart-button"},React.createElement("i",{className:"fas fa-shopping-cart"}),React.createElement("span",null,availability?"Agregar al Carrito":"Agotado")))}catch(error){console.error("ProductCard render error:",error);reportError(error);return null}}</script>
+    <script>function addToCart(product){try{const cart=JSON.parse(localStorage.getItem("cart"))||[];const existingItem=cart.find(item=>item.id===product.id);if(existingItem){existingItem.quantity+=1}else{cart.push({...product,quantity:1})}localStorage.setItem("cart",JSON.stringify(cart));return true}catch(error){console.error("Error adding to cart:",error);reportError(error);return false}}function getCartItems(){try{return JSON.parse(localStorage.getItem("cart"))||[]}catch(error){console.error("Error getting cart items:",error);reportError(error);return[]}}</script>
+    <script>const products=[{id:1,name:"Soporte de Celular para Escritorio",description:"Soporte ergon\xF3mico y estable para tu smartphone, ideal para videoconferencias",price:299,material:"PLA Premium",availability:true,image:"https://images.unsplash.com/photo-1586105449897-20b5efeb3233?w=800",deliveryTime:"3-5 d\xEDas",isBestSeller:true},{id:2,name:"Organizador de Escritorio Premium",description:"Organizador multifuncional para tus \xFAtiles de oficina",price:399,material:"PLA Premium",availability:true,image:"https://images.unsplash.com/photo-1589578527966-fdac0f44566c?w=800",deliveryTime:"3-5 d\xEDas",isBestSeller:false},{id:3,name:"Maceta Geom\xE9trica Decorativa",description:"Maceta moderna con dise\xF1o poligonal, perfecta para suculentas",price:349,material:"PLA Premium",availability:true,image:"https://images.unsplash.com/photo-1558693168-c370615b54e0?w=800",deliveryTime:"4-6 d\xEDas",isBestSeller:true},{id:4,name:"Llavero Personalizado",description:"Llavero con tu nombre o dise\xF1o preferido",price:149,material:"PLA Premium",availability:true,image:"https://images.unsplash.com/photo-1572587356426-b33bf42f999b?w=800",deliveryTime:"2-3 d\xEDas",isBestSeller:true},{id:5,name:"Mini Drag\xF3n Coleccionable",description:"Figura detallada de drag\xF3n, perfecta para coleccionistas",price:299,material:"PLA Premium",availability:true,image:"https://images.unsplash.com/photo-1595432541891-a461100d3054?w=800",deliveryTime:"4-6 d\xEDas",isBestSeller:false},{id:6,name:"Soporte para Aud\xEDfonos Premium",description:"Soporte elegante para tus aud\xEDfonos de diadema",price:279,material:"PLA Premium",availability:true,image:"https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=800",deliveryTime:"3-5 d\xEDas",isBestSeller:true},{id:7,name:"Ganchos Multiuso (Set de 3)",description:"Ganchos resistentes para cocina o ba\xF1o",price:199,material:"PLA Premium",availability:true,image:"https://images.unsplash.com/photo-1562115937-f55516ed09fa?w=800",deliveryTime:"3-4 d\xEDas",isBestSeller:false},{id:8,name:"Soporte para Cepillos",description:"Organizador de cepillos de dientes con dise\xF1o moderno",price:189,material:"PLA Premium",availability:true,image:"https://images.unsplash.com/photo-1594824696556-d6fce2b99c98?w=800",deliveryTime:"2-4 d\xEDas",isBestSeller:false},{id:9,name:"Organizador de Cables Hexagonal",description:"Sistema modular para organizar cables",price:159,material:"PLA Premium",availability:true,image:"https://images.unsplash.com/photo-1611850698562-ae3d28934080?w=800",deliveryTime:"2-3 d\xEDas",isBestSeller:false},{id:10,name:"Set de Ajedrez Personalizado",description:"Juego de ajedrez completo con dise\xF1o \xFAnico",price:899,material:"PLA Premium",availability:true,image:"https://images.unsplash.com/photo-1586165368502-1bad197a6461?w=800",deliveryTime:"5-7 d\xEDas",isBestSeller:true},{id:11,name:"Estuche para Anillos",description:"Caja elegante con compartimentos para joyer\xEDa",price:249,material:"PLA Premium",availability:true,image:"https://images.unsplash.com/photo-1584302179602-e4c3d3fd629d?w=800",deliveryTime:"3-4 d\xEDas",isBestSeller:false},{id:12,name:"Tope de Puerta Decorativo",description:"Tope de puerta con dise\xF1o moderno",price:169,material:"PLA Premium",availability:true,image:"https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=800",deliveryTime:"2-3 d\xEDas",isBestSeller:false},{id:13,name:"L\xE1mpara Geom\xE9trica",description:"L\xE1mpara decorativa con dise\xF1o poligonal",price:599,material:"PLA Premium",availability:true,image:"https://images.unsplash.com/photo-1567459169668-95d355371bda?w=800",deliveryTime:"4-6 d\xEDas",isBestSeller:true},{id:14,name:"Soporte para Nintendo Switch",description:"Soporte ajustable para tu consola",price:349,material:"PLA Premium",availability:true,image:"https://images.unsplash.com/photo-1578303512597-81e6cc155b3e?w=800",deliveryTime:"3-5 d\xEDas",isBestSeller:false},{id:15,name:"Topper para Pastel",description:"Decoraci\xF3n personalizada para pasteles",price:199,material:"PLA Premium",availability:true,image:"https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=800",deliveryTime:"2-3 d\xEDas",isBestSeller:false},{id:16,name:"Soporte para Tablet",description:"Soporte ajustable para tablets y iPads",price:379,material:"PLA Premium",availability:true,image:"https://images.unsplash.com/photo-1584302179602-e4c3d3fd629d?w=800",deliveryTime:"3-5 d\xEDas",isBestSeller:false},{id:17,name:"Molde para Galletas",description:"Set de moldes para reposter\xEDa",price:229,material:"PLA Premium",availability:true,image:"https://images.unsplash.com/photo-1621236378699-8597faf6a176?w=800",deliveryTime:"2-4 d\xEDas",isBestSeller:false},{id:18,name:"Drag\xF3n Articulado",description:"Juguete articulado con dise\xF1o de drag\xF3n",price:449,material:"PLA Premium",availability:true,image:"https://images.unsplash.com/photo-1595432541891-a461100d3054?w=800",deliveryTime:"4-6 d\xEDas",isBestSeller:false},{id:19,name:"Set de Joyer\xEDa Geom\xE9trica",description:"Conjunto de accesorios modernos",price:299,material:"PLA Premium",availability:true,image:"https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=800",deliveryTime:"3-4 d\xEDas",isBestSeller:false},{id:20,name:"Perilla Decorativa",description:"Perilla de repuesto con dise\xF1o moderno",price:129,material:"PLA Premium",availability:true,image:"https://images.unsplash.com/photo-1581622558663-b2ce1f8d1f26?w=800",deliveryTime:"2-3 d\xEDas",isBestSeller:false}];const materials={pla:{name:"PLA Premium",colors:["Morado","Azul","Negro","Blanco"],properties:["Biodegradable","Alta resistencia","Acabado mate"],durability:"5 a\xF1os en condiciones normales"}};</script>
+    <script>function App(){try{const[cartItems,setCartItems]=React.useState([]);const[showCart,setShowCart]=React.useState(false);React.useEffect(()=>{const items=getCartItems();setCartItems(items)},[]);const handleCartUpdate=()=>{const items=getCartItems();setCartItems(items)};return React.createElement("div",{"data-name":"app-container"},React.createElement(Header,null),React.createElement(Navigation,null),React.createElement(Hero,null),React.createElement(BestSellers,{onCartUpdate:handleCartUpdate}),React.createElement(ProductList,{onCartUpdate:handleCartUpdate}),React.createElement(Materials,null),React.createElement(About,null),React.createElement(Contact,null),React.createElement(Cart,{items:cartItems,show:showCart,onClose:()=>setShowCart(false)}),React.createElement("div",{className:"cart-icon",onClick:()=>setShowCart(true),"data-name":"cart-button"},React.createElement("div",{className:"relative"},React.createElement("i",{className:"fas fa-shopping-cart"}),cartItems.length>0&&React.createElement("span",{className:"absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs"},cartItems.length))))}catch(error){console.error("App render error:",error);reportError(error);return React.createElement("div",null,"Error al cargar la aplicaci\xF3n")}}const root=ReactDOM.createRoot(document.getElementById("root"));root.render(React.createElement(ErrorBoundaryForTrickle,null,React.createElement(App,null)));</script>
+
+
+</body></html>
